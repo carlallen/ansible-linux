@@ -19,3 +19,7 @@
       when: install_zsh
     - name: Install OpenTofu
       ansible.builtin.import_tasks: "tasks/tofu.yml"
+    - name: Install Docker
+      ansible.builtin.import_tasks: "tasks/docker.yml"
+    - name: Install minio client
+      ansible.builtin.import_tasks: "tasks/minio.yml"
