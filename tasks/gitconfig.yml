@@ -1,0 +1,4 @@
+- name: Prepare .gitconfig
+  ansible.builtin.template:
+    src: templates/.gitconfig.j2
+    dest: "~/.gitconfig"

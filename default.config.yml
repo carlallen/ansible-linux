@@ -1,0 +1,12 @@
+git_email: github@allenofmn.com
+linux_user: carlmarxman
+
+install_programming_fonts: true
+install_zsh: true
+
+configure_dotfiles: true
+dotfiles_repo: git@github.com:carlallen/dotfiles.git
+dotfiles_repo_accept_hostkey: true
+dotfiles_repo_local_destination: ~/dotfiles
+dotfiles_files:
+  - .zshrc

@@ -1,0 +1,4 @@
+- name: "Install OpenTofu"
+  ansible.builtin.shell: "sudo curl -sSL https://get.opentofu.org/install-opentofu.sh | bash -s -- --install-method deb"
+  args:
+    creates: /usr/bin/tofu
