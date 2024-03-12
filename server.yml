@@ -1,0 +1,21 @@
+---
+- name: Setup Linux Server for development
+  hosts: all
+  vars_files:
+    - default.config.yml
+  roles:
+    - role: geerlingguy.dotfiles
+      when: configure_dotfiles
+      tags: ['dotfiles']
+
+  tasks:
+    - name: Configure Git
+      ansible.builtin.import_tasks: "tasks/gitconfig.yml"
+      tags: ['gitconfig']
+    - name: Install ZSH
+      ansible.builtin.import_tasks: "tasks/zsh.yml"
+      when: install_zsh
+    - name: Install OpenTofu
+      ansible.builtin.import_tasks: "tasks/tofu.yml"
+    - name: Install Docker
+      ansible.builtin.import_tasks: "tasks/docker.yml"
